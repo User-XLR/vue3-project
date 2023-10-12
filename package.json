@@ -1,0 +1,78 @@
+{
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "serve": "vite --mode prod",
+    "build": "vue-tsc && vite build --mode development",
+    "build:prod": "vue-tsc && vite build --mode prod",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preview": "vite preview",
+    "prettier": "npx prettier --write .",
+    "prepare": "husky install"
+  },
+  "pre-commit": [
+    "prettier"
+  ],
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.1.0",
+    "@vue/eslint-config-typescript": "^12.0.0",
+    "axios": "^1.5.0",
+    "echarts": "^5.4.3",
+    "element-plus": "^2.3.14",
+    "pinia": "^2.1.6",
+    "pinia-plugin-persistedstate": "^3.2.0",
+    "vue": "^3.3.4",
+    "vue-i18n": "^9.4.1",
+    "vue-router": "^4.2.4"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.7.2",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@rushstack/eslint-patch": "^1.5.1",
+    "@types/node": "^20.6.3",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vue/eslint-config-airbnb-with-typescript": "^7.0.0",
+    "@vue/eslint-config-prettier": "^8.0.0",
+    "eslint": "^8.49.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "eslint-plugin-vue-scoped-css": "^2.5.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^14.0.1",
+    "postcss-scss": "^4.0.9",
+    "pre-commit": "^1.2.2",
+    "prettier": "^3.0.3",
+    "sass": "^1.67.0",
+    "sass-loader": "^13.3.2",
+    "typescript": "^5.2.2",
+    "unplugin-auto-import": "^0.16.6",
+    "unplugin-vue-components": "^0.25.2",
+    "vite": "^4.4.5",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-remove-console": "^2.1.1",
+    "vue-eslint-parser": "^9.3.2",
+    "vue-tsc": "^1.8.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue}": [
+      "prettier --write ./src",
+      "eslint --ext .vue,.js,.jsx --fix ./src"
+    ]
+  },
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
