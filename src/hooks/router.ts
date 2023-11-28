@@ -1,7 +1,8 @@
-import route from '@/router/index.ts'
+import { createRouter, createWebHashHistory } from 'vue-router'
+import routes from '@/router/index'
 
-route.beforeEach(() => {
-  console.log(1)
+const router = createRouter({
+  history: createWebHashHistory(),
+  routes,
 })
-
-export default route
+export default router

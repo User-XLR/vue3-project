@@ -30,6 +30,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.7.2",
     "@commitlint/config-conventional": "^17.7.0",
+    "@rushstack/eslint-patch": "^1.5.1",
     "@types/node": "^20.6.3",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vue/eslint-config-airbnb-with-typescript": "^7.0.0",
