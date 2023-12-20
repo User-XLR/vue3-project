@@ -7,9 +7,10 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    BaseIndex: typeof import('./../components/layouts/baseIndex.vue')['default']
-    ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
-    RouterLink: typeof import('vue-router')['RouterLink']
-    RouterView: typeof import('vue-router')['RouterView']
+    BaseIndex: (typeof import('./../components/layouts/baseIndex.vue'))['default']
+    ElButton: (typeof import('element-plus/es'))['ElButton']
+    ElConfigProvider: (typeof import('element-plus/es'))['ElConfigProvider']
+    RouterLink: (typeof import('vue-router'))['RouterLink']
+    RouterView: (typeof import('vue-router'))['RouterView']
   }
 }

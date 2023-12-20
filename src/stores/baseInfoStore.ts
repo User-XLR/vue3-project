@@ -17,7 +17,20 @@ const useBaseInfoStore = defineStore(
     const setProjectId = (projectIdValue: string) => {
       projectId.value = projectIdValue
     }
-    return { token, projectId, getToken, setToken, getProjectId, setProjectId }
+    const language = ref('en')
+    const setLanguage = (languages: string) => {
+      language.value = languages
+    }
+    return {
+      token,
+      projectId,
+      getToken,
+      setToken,
+      getProjectId,
+      setProjectId,
+      language,
+      setLanguage,
+    }
   },
   {
     persist: true,

@@ -1,15 +1,20 @@
 <script setup lang="ts">
-import en from 'element-plus/dist/locale/en.mjs'
 import useBaseInfoStore from '@/stores/baseInfoStore'
 import layoutPage from '@/components/layouts/baseIndex.vue'
 
-const locale = en
+const { messages, locale }: any = useI18n()
 const baseInfoStore = useBaseInfoStore()
-baseInfoStore.setToken('222')
+const localeLang = ref(messages[baseInfoStore.language])
+const changeLanguage = () => {
+  locale.value = baseInfoStore.language
+  localeLang.value = messages.value[locale.value]
+}
+
+watchEffect(changeLanguage)
 </script>
 
 <template>
-  <el-config-provider size="small" :z-index="3000" :locale="locale">
+  <el-config-provider size="small" :z-index="3000" :locale="localeLang">
     <layoutPage></layoutPage>
   </el-config-provider>
 </template>
