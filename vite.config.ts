@@ -5,6 +5,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import removeConsole from 'vite-plugin-remove-console'
+import Pages from 'vite-plugin-pages'
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd())
@@ -16,6 +17,11 @@ export default defineConfig(({ mode }) => {
     plugins: [
       ...prodPlugins,
       vue(),
+      Pages({
+        dirs: './src/views', // 指定生成路由的目录
+        extensions: ['vue'], // 文件后缀
+        // exclude: ['**/src/*.vue'], // 可以排除指定目录
+      }),
       AutoImport({
         resolvers: [ElementPlusResolver()],
         imports: ['vue', 'vue-router', 'pinia', 'vue-i18n'],

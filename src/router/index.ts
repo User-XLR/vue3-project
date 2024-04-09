@@ -1,17 +1,14 @@
 import { RouteRecordRaw } from 'vue-router'
+import routes from '~pages'
 
-const routes: Array<RouteRecordRaw> = [
+console.log(routes)
+
+const router: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'main',
-    children: [
-      {
-        path: 'base',
-        name: 'base',
-        component: () => import('@/views/base/index.vue'),
-      },
-    ],
+    children: [...routes],
   },
 ]
 
-export default routes
+export default router
