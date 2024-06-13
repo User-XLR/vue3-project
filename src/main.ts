@@ -9,7 +9,6 @@ import 'element-plus/theme-chalk/el-loading.css'
 import 'element-plus/theme-chalk/el-message.css'
 
 const app = createApp(App)
-
 // eslint-disable-next-line no-restricted-syntax
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component)

@@ -1,5 +1,5 @@
 import { RouteRecordRaw } from 'vue-router'
-import routes from '~pages'
+import routes from 'virtual:generated-pages'
 
 console.log(routes)
 

@@ -1,8 +1,19 @@
 <template>
-  <div>{{ t('hello') }}</div>
+  <div class="m-1">{{ t('hello') }}</div>
   <el-button @click="clickFn('en')">en</el-button>
   <el-button @click="clickFn('zh')">zh</el-button>
   <el-button @click="clickFn('hk')">tw</el-button>
+  <hr />
+  <div class="flex justify-center items-center bg-neutral-700 fon">
+    <div class="block m-5">
+      <span class="demonstration">Default</span>
+      <el-date-picker
+        v-model="value1"
+        type="datetime"
+        placeholder="Select date and time"
+      />
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -23,8 +34,9 @@ api
     console.log(res)
   })
 
-console.log(baseInfoStore.getToken.value)
 baseInfoStore.setToken('000')
+
+const value1 = ref('')
 </script>
 
 <style lang="scss" scoped></style>
