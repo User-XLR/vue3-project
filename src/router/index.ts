@@ -7,6 +7,7 @@ const router: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'main',
+    redirect: '/base',
     children: [...routes],
   },
 ]

@@ -4,9 +4,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
-console.log(111)
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" scoped>
 .Layout {

@@ -1,0 +1,7 @@
+{
+  "i18n-ally.localesPaths": "src/config/languages/", // 相对于项目根目录的语言环境目录路径
+  "i18n-ally.sourceLanguage": "en-US", // 根据此语言文件翻译其他语言文件的变量和内容
+  "i18n-ally.displayLanguage": "zh-CN", // 显示语言
+  "i18n-ally.theme.annotationMissingBorder": "#d37070",
+  "i18n-ally.theme.annotationMissing": "#d37070"
+}

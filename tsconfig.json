@@ -26,7 +26,15 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/config/languages/en-US.json",
+    "src/config/languages/zh-TW.json",
+    "src/config/languages/zh-CN.json"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }],
   "exclude": ["node_modules"],
   "removeComponents": true //true编译代码后会将注释删掉
