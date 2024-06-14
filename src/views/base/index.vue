@@ -1,11 +1,13 @@
 <template>
   <div class="m-1">{{ t('hello') }}</div>
-  <el-button type="primary" class="hover:bg-red-600" @click="clickFn('en')"
-    >en</el-button
-  >
-  <el-button @click="clickFn('zh')">zh</el-button>
-  <el-button @click="clickFn('hk')">tw</el-button>
-  <el-button @click="toTest">{{ t('man') }}</el-button>
+  <el-button type="primary" class="hover:bg-red-600" @click="clickFn('en')">{{
+    t('en')
+  }}</el-button>
+  <el-button @click="clickFn('zh')">{{ t('zh') }}</el-button>
+  <el-button @click="clickFn('hk')">{{ t('tw') }}</el-button>
+  <el-button @click="toTest">
+    {{ t('Jump') }}
+  </el-button>
   <hr />
   <div class="flex justify-center items-center bg-neutral-700">
     <div class="block m-5">

@@ -1,4 +1,9 @@
 {
   "hello": "Hello",
-  "Default": "Default"
+  "Default": "Default",
+  "man": "man",
+  "en": "English",
+  "zh": "Chinese",
+  "tw": "Traditional",
+  "Jump": "Jump"
 }
