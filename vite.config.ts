@@ -37,7 +37,6 @@ export default defineConfig(({ mode }) => {
       chunkSizeWarningLimit: 1000,
       rollupOptions: {
         output: {
-          // eslint-disable-next-line consistent-return
           manualChunks(id) {
             if (id.includes('node_modules')) {
               return 'vendor'

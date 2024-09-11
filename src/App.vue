@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import useBaseInfoStore from '@/stores/baseInfoStore'
 import layoutPage from '@/components/layouts/baseIndex.vue'
+import { ref, watchEffect } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 const { messages, locale }: any = useI18n()
 const baseInfoStore = useBaseInfoStore()

@@ -25,7 +25,8 @@
 import { useRouter } from 'vue-router'
 import useBaseInfoStore from '@/stores/baseInfoStore'
 import api from '@/api/baseApi'
-
+import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 const router = useRouter()
 const baseInfoStore = useBaseInfoStore()
 const clickFn = (str: any) => {
