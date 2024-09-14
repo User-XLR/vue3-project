@@ -33,7 +33,7 @@ export class Request {
       (err: any) => {
         // 请求错误，这里可以用全局提示框进行提示
         return Promise.reject(err)
-      },
+      }
     )
     this.instance.interceptors.response.use(
       (res: AxiosResponse) => {
@@ -44,11 +44,11 @@ export class Request {
       (err: any) => {
         ElMessage({
           message: err.message,
-          type: 'error',
+          type: 'error'
         })
         // 这里用来处理http常见错误，进行全局提示
         return Promise.reject(err)
-      },
+      }
     )
   }
 
@@ -59,7 +59,7 @@ export class Request {
 
   public get<T = any>(
     url: string,
-    config?: AxiosRequestConfig,
+    config?: AxiosRequestConfig
   ): Promise<AxiosResponse<Result<T>>> {
     return this.instance.get(url, config)
   }
@@ -67,7 +67,7 @@ export class Request {
   public post<T = any>(
     url: string,
     data?: any,
-    config?: AxiosRequestConfig,
+    config?: AxiosRequestConfig
   ): Promise<AxiosResponse<Result<T>>> {
     return this.instance.post(url, data, config)
   }
@@ -75,14 +75,14 @@ export class Request {
   public put<T = any>(
     url: string,
     data?: any,
-    config?: AxiosRequestConfig,
+    config?: AxiosRequestConfig
   ): Promise<AxiosResponse<Result<T>>> {
     return this.instance.put(url, data, config)
   }
 
   public delete<T = any>(
     url: string,
-    config?: AxiosRequestConfig,
+    config?: AxiosRequestConfig
   ): Promise<AxiosResponse<Result<T>>> {
     return this.instance.delete(url, config)
   }

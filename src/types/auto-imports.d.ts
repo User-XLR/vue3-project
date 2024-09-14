@@ -90,7 +90,7 @@ declare global {
     PropType,
     Ref,
     VNode,
-    WritableComputedRef,
+    WritableComputedRef
   } from 'vue'
   import('vue')
 }

@@ -3,6 +3,19 @@ import { defineStore } from 'pinia'
 const useBaseInfoStore = defineStore(
   'baseInfo',
   () => {
+    const theme = ref('')
+    const getTheme = computed(() => {
+      return theme
+    })
+    const setTheme = (themeValue: string) => {
+      const { classList } = document.documentElement
+      if (classList.contains(themeValue)) return
+      classList.forEach((item) => {
+        classList.remove(item)
+      })
+      classList.add(themeValue)
+      theme.value = themeValue
+    }
     const token = ref('')
     const getToken = computed(() => {
       return token
@@ -30,10 +43,12 @@ const useBaseInfoStore = defineStore(
       setProjectId,
       language,
       setLanguage,
+      getTheme,
+      setTheme
     }
   },
   {
-    persist: true,
-  },
+    persist: true
+  }
 )
 export default useBaseInfoStore

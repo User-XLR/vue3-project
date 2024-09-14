@@ -1,13 +1,27 @@
 <template>
   <div class="m-1">{{ t('hello') }}</div>
-  <el-button type="primary" class="hover:bg-red-600" @click="clickFn('en')">{{
-    t('en')
-  }}</el-button>
+  <el-button
+    type="primary"
+    class="hover:bg-red-600"
+    @click="clickFn('en')"
+  >
+    {{ t('en') }}
+  </el-button>
   <el-button @click="clickFn('zh')">{{ t('zh') }}</el-button>
   <el-button @click="clickFn('hk')">{{ t('tw') }}</el-button>
   <el-button @click="toTest">
     {{ t('Jump') }}
   </el-button>
+  <hr />
+  <el-switch
+    v-model="value3"
+    inline-prompt
+    active-text="light"
+    active-value="light"
+    inactive-value="dark"
+    inactive-text="dark"
+    @change="changeTheme"
+  />
   <hr />
   <div class="flex justify-center items-center bg-neutral-700">
     <div class="block m-5">
@@ -22,29 +36,40 @@
 </template>
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import useBaseInfoStore from '@/stores/baseInfoStore'
-import api from '@/api/baseApi'
+// import api from '@/api/baseApi'
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 const router = useRouter()
+const route = useRoute()
 const baseInfoStore = useBaseInfoStore()
+const value3 = ref(baseInfoStore.getTheme)
 const clickFn = (str: any) => {
   baseInfoStore.setLanguage(str)
 }
 const { t } = useI18n()
 /* api调用实例 */
-api
-  .baseA({
-    size: 1000,
-  })
-  .then((res: any) => {
-    console.log(res)
-  })
+// api
+//   .baseA({
+//     size: 1000
+//   })
+//   .then((res: any) => {
+//     console.log(res)
+//   })
 
 baseInfoStore.setToken('000')
 const toTest = () => {
-  router.push('/base/test')
+  const query = Object.assign({}, route.query)
+  console.log(query)
+
+  router.push({ path: '/base/test', query })
+}
+/* 切换主题 */
+const changeTheme = (val: any) => {
+  console.log(val)
+
+  baseInfoStore.setTheme(val)
 }
 const value1 = ref('')
 </script>

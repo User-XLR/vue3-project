@@ -3,6 +3,9 @@ import routes from '@/router/index'
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes,
+  routes
+})
+router.beforeEach((to, from, next) => {
+  next()
 })
 export default router

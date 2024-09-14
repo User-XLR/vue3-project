@@ -9,21 +9,21 @@ import tw from '../config/languages/zh-TW.json'
 const messages = {
   en: {
     ...en,
-    ...enLocale,
+    ...enLocale
   },
   zh: {
     ...zh,
-    ...zhCnLocale,
+    ...zhCnLocale
   },
   hk: {
     ...tw,
-    ...twLocale,
-  },
+    ...twLocale
+  }
 }
 const i18n = createI18n({
   locale: 'en',
   legacy: false,
   globalInjection: true,
-  messages,
+  messages
 })
 export default i18n

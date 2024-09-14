@@ -19,18 +19,18 @@ export default defineConfig(({ mode }) => {
       vue(),
       Pages({
         dirs: './src/views', // 指定生成路由的目录
-        extensions: ['vue'], // 文件后缀
+        extensions: ['vue'] // 文件后缀
         // exclude: ['**/src/*.vue'], // 可以排除指定目录
       }),
       AutoImport({
         resolvers: [ElementPlusResolver()],
         imports: ['vue', 'vue-router', 'pinia', 'vue-i18n'],
-        dts: 'src/types/auto-imports.d.ts',
+        dts: 'src/types/auto-imports.d.ts'
       }),
       Components({
         resolvers: [ElementPlusResolver()],
-        dts: 'src/types/components.d.ts',
-      }),
+        dts: 'src/types/components.d.ts'
+      })
     ],
     base: './',
     build: {
@@ -41,19 +41,19 @@ export default defineConfig(({ mode }) => {
             if (id.includes('node_modules')) {
               return 'vendor'
             }
-          },
-        },
-      },
+          }
+        }
+      }
     },
     resolve: {
       alias: {
-        '@': resolve(__dirname, 'src'),
+        '@': resolve(__dirname, 'src')
       },
-      extensions: ['.js', '.ts', '.jsx', '.tsx', '.json'],
+      extensions: ['.js', '.ts', '.jsx', '.tsx', '.json']
     },
     server: {
       host: true,
-      port: 8080,
-    },
+      port: 8080
+    }
   }
 })
