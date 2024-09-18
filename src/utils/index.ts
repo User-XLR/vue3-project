@@ -21,7 +21,6 @@ export function debounce(
         try {
           const result = func.apply(this, args)
           if (resultCallback) resultCallback(result)
-
           resolve(result)
         } catch (e) {
           reject(e)

@@ -15,7 +15,7 @@ const changeLanguage = () => {
 }
 watchEffect(changeLanguage)
 watch(
-  () => route.query.theme,
+  () => route.query?.theme,
   () => {
     const { theme = 'light' }: any = route.query
     if (baseInfoStore.getTheme.value) return

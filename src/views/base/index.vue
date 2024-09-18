@@ -1,5 +1,5 @@
 <template>
-  <div class="m-1">{{ t('hello') }}</div>
+  <div class="">{{ t('hello') }}</div>
   <el-button
     type="primary"
     class="hover:bg-red-600"
@@ -23,7 +23,7 @@
     @change="changeTheme"
   />
   <hr />
-  <div class="flex justify-center items-center bg-neutral-700">
+  <div class="flex justify-center items-center bg-nav">
     <div class="block m-5">
       <span class="demonstration">{{ t('Default') }}</span>
       <el-date-picker
@@ -57,18 +57,13 @@ const { t } = useI18n()
 //   .then((res: any) => {
 //     console.log(res)
 //   })
-
 baseInfoStore.setToken('000')
 const toTest = () => {
   const query = Object.assign({}, route.query)
-  console.log(query)
-
   router.push({ path: '/base/test', query })
 }
 /* 切换主题 */
 const changeTheme = (val: any) => {
-  console.log(val)
-
   baseInfoStore.setTheme(val)
 }
 const value1 = ref('')

@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import './dark-theme.scss';
+@import './light-theme.scss';
 
 html,
 body,
@@ -117,6 +119,5 @@ body,
   height: 100%;
   width: 100%;
   overflow: hidden;
-  background-color: #fff;
   font-family: 'Noto Sans SC', Avenir, Helvetica, Arial, sans-serif;
 }

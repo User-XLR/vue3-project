@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import './style.scss'
+import './styles/style.scss'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import { pinia } from '@/hooks/pinia'
 import App from './App.vue'
