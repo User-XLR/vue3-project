@@ -1,11 +1,16 @@
 <template>
-	<div id="chart">1212</div>
+	<div id="chart">
+		1212
+
+		{{ t("down") }}
+	</div>
 </template>
 
 <script setup lang="ts">
 import { draw } from "@/utils/echarts";
-import { onMounted } from "vue";
+// import { onMounted } from "vue";
 
+const { t } = useI18n();
 onMounted(() => {
 	draw(document.querySelector("#chart") as HTMLElement, {
 		xAxis: {
